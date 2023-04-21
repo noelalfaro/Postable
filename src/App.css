@@ -1,0 +1,161 @@
+#root {
+  max-width: 1280px;
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+.app-container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+}
+
+.nav-bar {
+  width: 270px;
+  height: 100vh;
+  padding: 1.4em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  background-color: #2f2f2f;
+}
+.nav-functions {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-config {
+  /* height: 100px; */
+  background-color: #888;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.title {
+  height: fit-content;
+  padding-bottom: 0.1em;
+  border-bottom: 1px solid #c3bebe;
+  line-height: 1.5em;
+}
+.title svg {
+  vertical-align: middle;
+}
+
+.nav-item {
+  font-weight: 400;
+  font-size: 1.1em;
+  position: relative; /* set position to relative so we can position the underline */
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor; /* set the color of the underline to the same as the text color */
+  transition: width 0.3s ease-out; /* add a transition to make the underline fill smoothly */
+}
+
+.nav-item:hover::after {
+  width: 100%; /* when hovering, set the width to 100% to fill the underline */
+}
+
+.nav-item:not(:hover)::after {
+  width: 0; /* when not hovering, set the width back to 0 to make the underline slowly disappear */
+}
+
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-feed-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 80%;
+  padding: 2rem;
+}
+
+.post-container {
+  padding: 20px;
+  text-align: center;
+  height: fit-content;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  /* background-color: #fdfbfb; */
+  background-color: #2f2f2f;
+  gap: 10px;
+}
+
+.post-container button {
+  border-color: none;
+}
+
+.post-container h3 {
+  margin: 0;
+}
+
+.post-container p {
+  font-size: small;
+  color: #6c6b6b;
+}
+
+.post-container:hover {
+  border: none;
+  /* background-color: #1a1a1a; */
+  /* box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 0px 1px; */
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+    rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+}
