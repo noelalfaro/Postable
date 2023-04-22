@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { supabase } from '../Client'
-import Post from './Post';
+import PostCard from './PostCard';
 
 
 export default function Feed() {
 
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         const fetchData = async () => {
             const { data } = await supabase
@@ -14,6 +15,7 @@ export default function Feed() {
                 .order('created_at', { ascending: true })
 
             setPosts(data);
+            setLoading(false)
         };
         fetchData();
     }, [])
@@ -22,11 +24,12 @@ export default function Feed() {
     return (
         <div className='App'>
             <h1>Feed</h1>
+            {loading && <h3>Loading...</h3>}
             {
                 posts && posts.length > 0 ?
                     <div className='post-feed-container'>
                         {posts.map((post) => (
-                            <Post title={post.title} description={post.description} imageLink={post.imageLink} upvote={post.upvotes} created={post.created_at} key={post.id} id={post.id} />
+                            <PostCard title={post.title} description={post.description} imageLink={post.imageLink} upvote={post.upvotes} created={post.created_at} key={post.id} id={post.id} />
                         ))}
                     </div>
                     : ""

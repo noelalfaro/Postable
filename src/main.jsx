@@ -8,6 +8,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FeedView from './Routes/FeedView.jsx'
 import CreateView from './Routes/CreateView.jsx'
 import AboutView from './Routes/AboutView.jsx'
+import PostView from './Routes/PostView.jsx'
+import EditView from './Routes/EditView.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -18,7 +20,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route index={true} element={<App />} />
             <Route index={false} path="/feed" element={<FeedView />} />
             <Route index={false} path='/create-post' element={<CreateView />} />
+            <Route index={false} path="/feed/post/:id" element={<PostView />} />
+            <Route index={false} path="/feed/edit/:id" element={<EditView />} />
             <Route index={false} path='/about' element={<AboutView />} />
+            {/* <Route index={false} path="/crewmate-gallery/edit/:id" element={<DetailView />} /> */}
 
           </Route>
         </Route>

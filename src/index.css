@@ -34,6 +34,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0;
 }
 
 h2 {
@@ -47,10 +48,11 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
+  margin: 1em;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
 button:hover {
   border-color: currentColor;
@@ -89,5 +91,17 @@ button:focus-visible {
   .post-container:hover {
     background-color: #fdfbfb;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  .largeCardContainer {
+    background-color: #f6f6f7;
+  }
+
+  .largeCardContainer button {
+    border-color: currentColor;
+  }
+
+  .largeCardContainer button:hover {
+    background-color: #eae6e6;
   }
 }
