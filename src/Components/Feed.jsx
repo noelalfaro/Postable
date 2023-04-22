@@ -1,41 +1,79 @@
-import React, { useEffect, useState } from 'react'
-import { supabase } from '../Client'
+import React, { useEffect, useState } from 'react';
+import { supabase } from '../Client';
 import PostCard from './PostCard';
 
-
 export default function Feed() {
-
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const fetchPosts = async (sort, ascending) => {
+        setLoading(true);
+        const { data } = await supabase
+            .from('Posts')
+            .select()
+            .order(sort, { ascending: ascending });
+        setPosts(data);
+        setLoading(false);
+    };
+
     useEffect(() => {
-        const fetchData = async () => {
-            const { data } = await supabase
-                .from('Posts')
-                .select()
-                .order('created_at', { ascending: true })
+        fetchPosts('created_at', false);
+    }, []);
 
-            setPosts(data);
-            setLoading(false)
-        };
-        fetchData();
-    }, [])
+    const sortByCreated = () => {
+        fetchPosts('created_at', false);
+    };
 
+    const sortByUpvotes = () => {
+        fetchPosts('upvotes', false);
+    };
+
+    const handleSearch = async (event) => {
+        event.preventDefault();
+        const { data } = await supabase
+            .from('Posts')
+            .select()
+            .textSearch('title', searchTerm);
+        setPosts(data);
+    };
 
     return (
         <div className='App'>
             <h1>Feed</h1>
             {loading && <h3>Loading...</h3>}
-            {
-                posts && posts.length > 0 ?
-                    <div className='post-feed-container'>
-                        {posts.map((post) => (
-                            <PostCard title={post.title} description={post.description} imageLink={post.imageLink} upvote={post.upvotes} created={post.created_at} key={post.id} id={post.id} />
-                        ))}
-                    </div>
-                    : ""
-            }
-
+            <div>
+                <button onClick={sortByCreated}>Sort by latest</button>
+                <button onClick={sortByUpvotes}>
+                    Sort by Most Popular (upvotes)
+                </button>
+            </div>
+            <form onSubmit={handleSearch}>
+                <input
+                    type='text'
+                    placeholder='Search by title'
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <button type='submit'>Search</button>
+            </form>
+            {posts && posts.length > 0 ? (
+                <div className='post-feed-container'>
+                    {posts.map((post) => (
+                        <PostCard
+                            title={post.title}
+                            description={post.description}
+                            imageLink={post.imageLink}
+                            upvote={post.upvotes}
+                            created={post.created_at}
+                            key={post.id}
+                            id={post.id}
+                        />
+                    ))}
+                </div>
+            ) : (
+                <p>No posts found.</p>
+            )}
         </div>
-
-    )
+    );
 }

@@ -79,15 +79,16 @@ export default function Post() {
                     <div className='largeCardContainer'>
 
                         <h2>{post.title}</h2>
-                        <h3>{post.description}</h3>
+                        <h4>{post.description}</h4>
                         <img src={post.imageLink} alt={post.title} />
                         <div className='button-container'>
                             <Link to={'/feed/edit/' + id}>
                                 <button>Edit Post</button>
                             </Link>
                             <button onClick={deletePost}>Delete Post</button>
+                            <button onClick={updateCount}>{'+ ' + count}</button>
+
                         </div>
-                        <button onClick={updateCount}>{'+ ' + count}</button>
                         <p>{formattedDate}</p>
                     </div>
 

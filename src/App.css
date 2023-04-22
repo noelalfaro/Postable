@@ -87,6 +87,7 @@
   display: inline-block;
   font-weight: 400;
   font-size: 1.1em;
+  padding: 0 0.1em;
 }
 
 .nav-item::after {
@@ -145,12 +146,13 @@
 }
 
 .post-container h3 {
-  margin: 0;
+  margin: 1em;
 }
 
 .post-container p {
   font-size: small;
   color: #6c6b6b;
+  margin: 0;
 }
 
 .post-container:hover {
@@ -184,10 +186,14 @@
   color: #6c6b6b;
 }
 
+.largeCardContainer h4 {
+  margin: 0;
+}
+
 .button-container {
   display: flex;
-  width: 40%;
-  justify-content: space-evenly;
+  width: 50%;
+  justify-content: center;
 }
 
 input[type="text"],
