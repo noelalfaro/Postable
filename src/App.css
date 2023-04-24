@@ -111,10 +111,11 @@
 
 .App {
   width: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
+  gap: 0.5em;
   padding: 1em;
 }
 
@@ -123,6 +124,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   width: 80%;
+  height: 60%;
   padding: 2rem;
 }
 
@@ -132,7 +134,7 @@
   height: fit-content;
   border-radius: 8px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: center;
   transition: all 0.2s ease;
@@ -146,7 +148,7 @@
 }
 
 .post-container h3 {
-  margin: 1em;
+  margin: 0;
 }
 
 .post-container p {
@@ -164,13 +166,14 @@
 .largeCardContainer {
   background-color: #2f2f2f;
   width: 100%;
-  height: fit-content;
+  height: 60%;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.2s ease;
-  gap: 1em;
+  justify-content: center;
+  gap: 0.5em;
 }
 
 .largeCardContainer:hover {
@@ -179,11 +182,13 @@
 
 .largeCardContainer img {
   width: 300px;
+  border-radius: 8px;
 }
 
 .largeCardContainer p {
   font-size: small;
   color: #6c6b6b;
+  margin: 0.5em;
 }
 
 .largeCardContainer h4 {
@@ -199,12 +204,16 @@
 input[type="text"],
 input[type="number"],
 textarea {
-  padding: 15px;
+  padding: 10px;
   border-radius: 6px;
   border: none;
   width: 300px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+textarea {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 input[type="submit"] {
@@ -224,4 +233,44 @@ input[type="submit"] {
 
 input[type="radio"] {
   align-self: left;
+}
+
+.commentContainer {
+  width: 100%;
+  height: 30%;
+  overflow-y: scroll;
+  text-align: left;
+  align-self: flex-start;
+  padding: 0.5em;
+  /* background-color: #213547; */
+}
+
+.commentContainer ul {
+  list-style: none;
+  display: contents;
+}
+
+.commentFormContainer {
+  width: 100%;
+  padding: 0.5em;
+  height: 10%;
+  align-items: center;
+}
+
+.commentFormContainer form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.commentFormContainer input {
+  padding: 15px;
+  border-radius: 6px;
+  border: none;
+  width: 300px;
+  font-weight: 600;
+  font-size: 16px;
+  /* height: 50%; */
 }

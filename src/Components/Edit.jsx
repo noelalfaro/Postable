@@ -51,7 +51,7 @@ export default function Edit() {
     return (
         <div className='App'>
             <h1>Edit Post</h1>
-            <div className='largeCardContainer'>
+            <div className='largeCardContainer' style={{ height: 'fit-content' }}>
                 <form onSubmit={updatePost} >
                     <label htmlFor="title"><h3>Title</h3></label>
                     <input type="text" id="title" name="title" value={post.title || ''} onChange={onChange} required /><br />

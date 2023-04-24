@@ -36,7 +36,7 @@ export default function NewPost() {
     return (
         <div className='App'>
             <h1>Create a Post</h1>
-            <div className='largeCardContainer'>
+            <div className='largeCardContainer' style={{ height: 'fit-content' }}>
                 <form onSubmit={createPost}>
                     <label htmlFor='title'>
                         <h3>Title</h3>

@@ -104,4 +104,10 @@ button:focus-visible {
   .largeCardContainer button:hover {
     background-color: #eae6e6;
   }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    background-color: #fdfbfb;
+  }
 }
