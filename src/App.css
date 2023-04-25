@@ -274,3 +274,7 @@ input[type="radio"] {
   font-size: 16px;
   /* height: 50%; */
 }
+
+.aboutTextContainer {
+  width: 600px;
+}

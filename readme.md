@@ -2,9 +2,12 @@
 
 Submitted by: Noel Alfaro
 
-This web app: **insert description**
+This is a web app that uses supabase to allow users to create, read, update, and/or delete 'posts' & comments.
+The Feed shows all the added posts, where the user can user can search or sort by popularity or time created
+each Post has a dedicated page that the user can navigate to by clicking on a post card in the feed, navigation is
+handled by react-router-dom.
 
-Time spent: **X** hours spent in total
+Time spent: ~10 hours spent in total
 
 ## Required Features
 
@@ -35,26 +38,24 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you added to improve the site's functionality!
+- Light & Dark Mode implemented
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./src/assets/gif-kapture.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
-GIF created with ...
+GIF created with Kap(https://getkap.co/) for macOS
 
 <!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
+
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
-
-Describe any challenges encountered while building the app.
 
 ## License
 

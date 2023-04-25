@@ -15,7 +15,7 @@
 }
 
 a {
-  font-weight: 500;
+  font-weight: bold;
   color: currentColor;
   text-decoration: inherit;
 }
@@ -109,5 +109,6 @@ button:focus-visible {
   input[type="number"],
   textarea {
     background-color: #fdfbfb;
+    border: 2px solid currentColor;
   }
 }

@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       <div className='App'>
-        <h1>Post Your Thoughts...</h1>
-        <h3>Share your favorite show, cool internet finds, design inspiration, or what's going on in your life.</h3>
+        <h1 style={{ margin: '.5em' }}>Post Your Thoughts...</h1>
+        <h3>Share your favorite show, post your hot takes, or ask for advise and get feedback.</h3>
 
         <svg viewBox="442.000112 195 233.999888 367" width="233.999888" height="367" fill="currentColor"><path d=" M462.000112 319.980722 L462.000112 319.980722 C462.000112 319.980722, 472.000112 319.980722, 472.000112 329.980722 L472.000112 329.980722 C472.000112 329.980722, 472.000112 339.980722, 462.000112 339.980722 L462.000112 339.980722 C462.000112 339.980722, 452.000112 339.980722, 452.000112 329.980722 L452.000112 329.980722 C452.000112 329.980722, 452.000112 319.980722, 462.000112 319.980722"></path>
           <path d=" M488 205 L488 205 C488 205, 498 205, 498 215 L498 215 C498 215, 498 225, 488 225 L488 225 C488 225, 478 225, 478 215 L478 215 C478 215, 478 205, 488 205"></path>

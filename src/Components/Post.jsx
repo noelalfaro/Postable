@@ -130,7 +130,7 @@ export default function Post() {
 
 
                     <div className='commentFormContainer'>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} >
                             <input
                                 type="text"
                                 name="author"
@@ -138,7 +138,8 @@ export default function Post() {
                                 value={author}
                                 onChange={(event) => setAuthor(event.target.value)}
                                 onFocus={() => setAuthor('')}
-                                style={{ width: "10%" }}
+                                style={{ width: "10%", border: 'none' }}
+                                autoComplete='off'
                             />
 
                             <input
@@ -148,7 +149,8 @@ export default function Post() {
                                 value={comment}
                                 onChange={(event) => setComment(event.target.value)}
                                 onFocus={() => setComment('')}
-                                style={{ width: "80%" }}
+                                style={{ width: "80%", border: 'none' }}
+                                autoComplete='off'
                             />
 
                             <button type="submit">Submit</button>

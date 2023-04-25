@@ -35,27 +35,46 @@ export default function NewPost() {
 
     return (
         <div className='App'>
-            <h1>Create a Post</h1>
+            <h1 style={{ margin: '.5em' }}>Create a Post</h1>
             <div className='largeCardContainer' style={{ height: 'fit-content' }}>
                 <form onSubmit={createPost}>
                     <label htmlFor='title'>
                         <h3>Title</h3>
                     </label>
-                    <input type='text' id='title' name='title' value={post.title} onChange={onChange} required />
+                    <input
+                        type='text'
+                        id='title'
+                        name='title'
+                        autoComplete='off'
+                        value={post.title}
+                        onChange={onChange}
+                        required />
                     <br />
                     <br />
 
                     <label htmlFor='description'>
                         <h3>Description</h3>
                     </label>
-                    <textarea type='text' id='description' name='description' value={post.description} onChange={onChange} required />
+                    <textarea
+                        type='text'
+                        id='description'
+                        name='description'
+                        autoComplete='off'
+                        value={post.description}
+                        onChange={onChange} required />
                     <br />
                     <br />
 
                     <label htmlFor='imageLink'>
                         <h3>Image Link</h3>
                     </label>
-                    <input type='text' id='imageLink' name='imageLink' value={post.imageLink} onChange={onChange} />
+                    <input
+                        type='text'
+                        id='imageLink'
+                        name='imageLink'
+                        autoComplete='off'
+                        value={post.imageLink}
+                        onChange={onChange} />
                     <br />
                     <br />
 

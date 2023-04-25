@@ -40,7 +40,7 @@ export default function Feed() {
 
     return (
         <div className='App'>
-            <h1>Feed</h1>
+            <h1 style={{ margin: '.1em' }}>Feed</h1>
             {loading && <h3>Loading...</h3>}
             <div>
                 <button onClick={sortByCreated}>Sort by latest</button>
@@ -48,12 +48,13 @@ export default function Feed() {
                     Sort by Most Popular (upvotes)
                 </button>
             </div>
-            <form onSubmit={handleSearch}>
+            <form onSubmit={handleSearch} autoComplete='off'>
                 <input
                     type='text'
                     placeholder='Search by title'
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
+                    style={{ border: 'none' }}
                 />
                 <button type='submit'>Search</button>
             </form>
@@ -72,7 +73,7 @@ export default function Feed() {
                     ))}
                 </div>
             ) : (
-                <p>No posts found.</p>
+                <h3>Loading...</h3>
             )}
         </div>
     );
